@@ -1,0 +1,17 @@
+{
+  "name": "BakeCost",
+  "short_name": "BakeCost",
+  "description": "Ingredient and packaging COGS calculator for home bakers.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#30644c",
+  "icons": [
+    {
+      "src": "icons/bakecost-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

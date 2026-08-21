@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#30644c" />
+    <meta name="description" content="A simple ingredient and packaging COGS calculator for home bakers." />
+    <title>BakeCost — Recipe COGS</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/bakecost-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/bakecost-icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#top"><span class="brand-mark">b</span>BakeCost</a>
+        <p class="eyebrow">HOME BAKER BETA</p>
+        <nav>
+          <a class="active" href="#recipe">Recipe calculator</a>
+          <a href="#ingredients">Ingredients</a>
+          <a href="#packaging">Packaging</a>
+        </nav>
+        <p class="sidebar-note">Know your true cake cost before you set the price.</p>
+      </aside>
+
+      <section class="content" id="top">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">RECIPE COSTING</p>
+            <h1>Chocolate Fudge Cake</h1>
+          </div>
+          <button class="ghost-button" id="newRecipe">+ New recipe</button>
+        </header>
+
+        <div class="intro-card">
+          <span class="sparkle">✦</span>
+          <p>Add what goes into one batch. We’ll turn it into your exact cost per cake.</p>
+        </div>
+
+        <section class="workspace" id="recipe">
+          <div class="editor">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">STEP 1</p>
+                <h2>Batch details</h2>
+              </div>
+            </div>
+            <div class="batch-grid">
+              <label>Recipe name<input id="recipeName" value="Chocolate Fudge Cake" /></label>
+              <label>Batch yield <div class="input-with-suffix"><input id="yield" type="number" min="1" value="1" /><span>cakes</span></div></label>
+            </div>
+
+            <div class="section-heading compact" id="ingredients">
+              <div><p class="eyebrow">STEP 2</p><h2>Ingredients</h2></div>
+              <button class="text-button" id="addIngredient">+ Add ingredient</button>
+            </div>
+            <div class="cost-list" id="ingredientList"></div>
+
+            <div class="section-heading compact" id="packaging">
+              <div><p class="eyebrow">STEP 3</p><h2>Packaging</h2></div>
+              <button class="text-button" id="addPackaging">+ Add packaging</button>
+            </div>
+            <div class="cost-list" id="packagingList"></div>
+          </div>
+
+          <aside class="summary-card">
+            <p class="eyebrow">YOUR COGS</p>
+            <h2>Cost summary</h2>
+            <div class="total-cost"><span>RM</span><strong id="costPerItem">0.00</strong><small>per cake</small></div>
+            <div class="summary-lines">
+              <div><span>Ingredients</span><strong id="ingredientTotal">RM0.00</strong></div>
+              <div><span>Packaging</span><strong id="packagingTotal">RM0.00</strong></div>
+              <div class="grand"><span>Total batch cost</span><strong id="batchTotal">RM0.00</strong></div>
+            </div>
+            <hr />
+            <label class="selling-price">Selling price <div class="currency-input"><span>RM</span><input id="sellingPrice" type="number" min="0" step="0.10" value="75" /></div></label>
+            <div class="profit-result"><span>Profit per cake</span><strong id="profit">RM0.00</strong></div>
+            <div class="margin-result"><span>Gross margin</span><strong id="margin">0%</strong></div>
+            <p class="disclaimer">Ingredients and packaging only. Labor, delivery, and overhead are excluded in this beta.</p>
+          </aside>
+        </section>
+      </section>
+    </main>
+    <template id="costRowTemplate">
+      <div class="cost-row">
+        <div class="item-name"><input class="name" aria-label="Item name" /></div>
+        <label>Used<input class="used" type="number" min="0" step="0.01" aria-label="Quantity used" /></label>
+        <label class="unit-label">Unit<select class="unit" aria-label="Unit"><option value="g">g</option><option value="ml">ml</option><option value="unit">unit</option></select></label>
+        <label>Cost / unit<div class="mini-currency"><span>RM</span><input class="unit-cost" type="number" min="0" step="0.001" aria-label="Cost per unit" /></div></label>
+        <strong class="row-total">RM0.00</strong><button class="remove" aria-label="Remove item">×</button>
+      </div>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>
