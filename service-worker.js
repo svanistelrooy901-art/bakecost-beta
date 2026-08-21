@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kirabahan-v5';
+const CACHE_NAME = 'kirabahan-v6';
 const APP_FILES = [
   './',
   './index.html',
