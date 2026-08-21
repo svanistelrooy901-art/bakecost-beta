@@ -1,6 +1,6 @@
 {
-  "name": "BakeCost",
-  "short_name": "BakeCost",
+  "name": "KiraBahan",
+  "short_name": "KiraBahan",
   "description": "Ingredient and packaging COGS calculator for home bakers.",
   "start_url": "./index.html",
   "display": "standalone",

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bakecost-v3';
+const CACHE_NAME = 'kirabahan-v4';
 const APP_FILES = [
   './',
   './index.html',
